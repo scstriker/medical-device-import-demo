@@ -12,7 +12,7 @@
 
 ## 在线演示
 
-Vercel 地址将在首次生产部署后补充。
+[https://medical-device-import-demo.vercel.app](https://medical-device-import-demo.vercel.app)
 
 ## 本地运行
 
@@ -36,4 +36,3 @@ npm run build
 ## 数据说明
 
 本项目是界面与交互原型，使用仓库内置的 mock 数据，不依赖线上后端服务。页面中的指标数值和研究结论仅用于功能演示，不应直接作为正式决策依据。
-
