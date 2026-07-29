@@ -1,0 +1,247 @@
+{
+  "tasks": [
+    {
+      "id": "task_001",
+      "title": "医疗装备进口总额分析",
+      "type": "indicator_analysis",
+      "status": "completed",
+      "createdAt": "2026-06-25T09:00:00Z"
+    },
+    {
+      "id": "task_002",
+      "title": "税则口径冲突检查",
+      "type": "quality_check",
+      "status": "running",
+      "createdAt": "2026-06-25T10:00:00Z"
+    },
+    {
+      "id": "task_003",
+      "title": "某省医疗器械产业简报",
+      "type": "report_generation",
+      "status": "draft",
+      "createdAt": "2026-06-25T11:00:00Z"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_20260625_customs_import_total_001",
+      "indicator_id": "medical_device_import_total",
+      "source_name": "海关统计",
+      "source_type": "official",
+      "source_url": "https://stats.customs.gov.cn/",
+      "raw_file_path": "raw/customs/2026-05/import_total.xlsx",
+      "snapshot_path": "raw/customs/2026-05/page_snapshot.html",
+      "screenshot_path": "raw/customs/2026-05/screenshot.png",
+      "raw_hash": "sha256:customs202605importtotal001",
+      "fetch_time": "2026-06-25T08:00:00Z",
+      "parser_version": "v0.1.0",
+      "quality_status": "verified",
+      "confidence": 0.96,
+      "authority_level": "A",
+      "manual_review_record": "not_required",
+      "conflict_status": "conflict_with_un_comtrade",
+      "related_evidence": ["ev_20260625_un_comtrade_import_total_001"]
+    },
+    {
+      "evidence_id": "ev_20260625_un_comtrade_import_total_001",
+      "indicator_id": "medical_device_import_total",
+      "source_name": "国际贸易校验库",
+      "source_type": "international",
+      "source_url": "https://comtradeplus.un.org/",
+      "raw_file_path": "raw/un_comtrade/2026-05/response.json",
+      "snapshot_path": "raw/un_comtrade/2026-05/request.json",
+      "screenshot_path": "raw/un_comtrade/2026-05/screenshot.png",
+      "raw_hash": "sha256:uncomtrade202605importtotal001",
+      "fetch_time": "2026-06-25T08:10:00Z",
+      "parser_version": "v0.1.0",
+      "quality_status": "conflict",
+      "confidence": 0.84,
+      "authority_level": "A-",
+      "manual_review_record": "queued",
+      "conflict_status": "open",
+      "related_evidence": ["ev_20260625_customs_import_total_001"]
+    },
+    {
+      "evidence_id": "ev_20260625_report_market_review_001",
+      "indicator_id": "medical_device_import_total",
+      "source_name": "行业研究报告",
+      "source_type": "report",
+      "source_url": "https://example.com/reports/medical-device-import-review.pdf",
+      "raw_file_path": "raw/reports/2026-06/import_dependency_report.pdf",
+      "snapshot_path": "raw/reports/2026-06/mineru_output.json",
+      "screenshot_path": "raw/reports/2026-06/page_001.png",
+      "raw_hash": "sha256:report202606importdependency001",
+      "fetch_time": "2026-06-25T09:00:00Z",
+      "parser_version": "v0.1.0",
+      "quality_status": "pending",
+      "confidence": 0.68,
+      "authority_level": "C",
+      "manual_review_record": "required",
+      "conflict_status": "none",
+      "related_evidence": ["ev_20260625_customs_import_total_001"]
+    },
+    {
+      "evidence_id": "ev_20260625_nmpa_registration_001",
+      "indicator_id": "medical_device_registration_count",
+      "source_name": "国家药监局",
+      "source_type": "official",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "raw_file_path": "raw/nmpa/2026-06/registration.html",
+      "snapshot_path": "raw/nmpa/2026-06/snapshot.html",
+      "screenshot_path": "raw/nmpa/2026-06/screenshot.png",
+      "raw_hash": "sha256:nmpa202606registration001",
+      "fetch_time": "2026-06-25T09:10:00Z",
+      "parser_version": "v0.1.0",
+      "quality_status": "pending",
+      "confidence": 0.82,
+      "authority_level": "A",
+      "manual_review_record": "queued",
+      "conflict_status": "none",
+      "related_evidence": []
+    },
+    {
+      "evidence_id": "ev_20260625_procurement_tender_001",
+      "indicator_id": "procurement_domestic_brand_share",
+      "source_name": "公共资源交易平台",
+      "source_type": "official",
+      "source_url": "https://www.ggzy.gov.cn/",
+      "raw_file_path": "raw/procurement/2026-06/tender.html",
+      "snapshot_path": "raw/procurement/2026-06/snapshot.html",
+      "screenshot_path": "raw/procurement/2026-06/screenshot.png",
+      "raw_hash": "sha256:procurement202606tender001",
+      "fetch_time": "2026-06-25T09:20:00Z",
+      "parser_version": "v0.1.0",
+      "quality_status": "verified",
+      "confidence": 0.9,
+      "authority_level": "A",
+      "manual_review_record": "complete",
+      "conflict_status": "none",
+      "related_evidence": []
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "medical_device_import_total",
+      "name": "医疗装备进口总额",
+      "value": 2000000,
+      "status": "conflict"
+    },
+    {
+      "indicator_id": "medical_device_registration_count",
+      "name": "注册证数量",
+      "value": 1280,
+      "status": "pending"
+    },
+    {
+      "indicator_id": "procurement_domestic_brand_share",
+      "name": "招采国产品牌中标占比",
+      "value": 0.63,
+      "status": "verified"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      { "id": "indicator_import_total", "type": "指标节点", "label": "医疗装备进口总额" },
+      { "id": "evidence_customs", "type": "证据节点", "label": "海关证据" },
+      { "id": "evidence_un", "type": "证据节点", "label": "国际贸易校验证据" },
+      { "id": "entity_hs_9018", "type": "实体节点", "label": "税则号九零一八" },
+      { "id": "report_brief", "type": "报告节点", "label": "产业简报" },
+      { "id": "error_conflict", "type": "风险节点", "label": "来源冲突" }
+    ],
+    "edges": [
+      { "id": "edge_1", "source": "evidence_customs", "target": "indicator_import_total", "type": "supports" },
+      { "id": "edge_2", "source": "evidence_un", "target": "indicator_import_total", "type": "supports" },
+      { "id": "edge_3", "source": "evidence_customs", "target": "evidence_un", "type": "conflicts_with" },
+      { "id": "edge_4", "source": "indicator_import_total", "target": "entity_hs_9018", "type": "derived_from" },
+      { "id": "edge_5", "source": "indicator_import_total", "target": "report_brief", "type": "mentions" }
+    ]
+  },
+  "reportPreview": {
+    "id": "report_001",
+    "title": "某省医疗器械产业简报",
+    "format": "网页",
+    "outline": ["核心结论", "进口依赖", "注册证趋势", "招采结构", "证据附录"],
+    "citations": ["ev_20260625_customs_import_total_001", "ev_20260625_report_market_review_001"]
+  },
+  "errorBook": [
+    {
+      "error_id": "err_20260625_001",
+      "error_type": "source_conflict",
+      "severity": "high",
+      "status": "open",
+      "related_evidence": ["ev_20260625_customs_import_total_001", "ev_20260625_un_comtrade_import_total_001"]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact_kpi_001",
+      "type": "kpi_card",
+      "title": "医疗装备进口总额",
+      "taskId": "task_001",
+      "evidenceIds": ["ev_20260625_customs_import_total_001"],
+      "createdAt": "2026-06-25T09:01:00Z",
+      "status": "conflict",
+      "payload": { "value": 2000000 }
+    },
+    {
+      "id": "artifact_chart_001",
+      "type": "echarts_chart",
+      "title": "进口额趋势",
+      "taskId": "task_001",
+      "evidenceIds": ["ev_20260625_customs_import_total_001"],
+      "createdAt": "2026-06-25T09:02:00Z",
+      "status": "draft",
+      "payload": { "series": [2000000] }
+    },
+    {
+      "id": "artifact_table_001",
+      "type": "data_table",
+      "title": "税则品类明细",
+      "taskId": "task_001",
+      "evidenceIds": ["ev_20260625_customs_import_total_001"],
+      "createdAt": "2026-06-25T09:03:00Z",
+      "status": "verified",
+      "payload": [{ "hs_code": "9018", "value": 1200000 }]
+    },
+    {
+      "id": "artifact_evidence_001",
+      "type": "evidence_card",
+      "title": "海关统计依据",
+      "taskId": "task_001",
+      "evidenceIds": ["ev_20260625_customs_import_total_001"],
+      "createdAt": "2026-06-25T09:04:00Z",
+      "status": "verified",
+      "payload": { "authority_level": "A" }
+    },
+    {
+      "id": "artifact_graph_001",
+      "type": "graph_view",
+      "title": "证据-指标图谱",
+      "taskId": "task_002",
+      "evidenceIds": ["ev_20260625_customs_import_total_001", "ev_20260625_un_comtrade_import_total_001"],
+      "createdAt": "2026-06-25T10:01:00Z",
+      "status": "conflict",
+      "payload": { "graph_id": "graph_001" }
+    },
+    {
+      "id": "artifact_report_001",
+      "type": "report_preview",
+      "title": "汇报网页版",
+      "taskId": "task_003",
+      "evidenceIds": ["ev_20260625_customs_import_total_001", "ev_20260625_report_market_review_001"],
+      "createdAt": "2026-06-25T11:01:00Z",
+      "status": "draft",
+      "payload": { "report_id": "report_001" }
+    },
+    {
+      "id": "artifact_review_001",
+      "type": "review_task",
+      "title": "国际贸易校验冲突复核",
+      "taskId": "task_002",
+      "evidenceIds": ["ev_20260625_un_comtrade_import_total_001"],
+      "createdAt": "2026-06-25T10:02:00Z",
+      "status": "conflict",
+      "payload": { "error_id": "err_20260625_001" }
+    }
+  ]
+}
