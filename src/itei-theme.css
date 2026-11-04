@@ -153,3 +153,11 @@ tr:hover td{background:var(--info-bg)}
 }
 @media(max-width:480px){.kpi-grid{grid-template-columns:1fr}.kpi-card:last-child{grid-column:auto}.home-update-ticker-record{font-size:12px}.home-update-ticker-record span:nth-of-type(n+2){display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Shell: floating assistant is out of grid flow. */
+.itei-top-region{height:var(--header-height);min-height:0}
+.itei-top-region .top-bar{height:100%}
+.workspace-frame{position:relative}
+.command-bar{position:absolute;inset:auto 0 0;height:0;z-index:40}
+.report-cover.active{box-shadow:none;outline:2px solid var(--brand-sky);outline-offset:2px}
+@media(max-width:860px){.command-bar{position:absolute;bottom:0}}
