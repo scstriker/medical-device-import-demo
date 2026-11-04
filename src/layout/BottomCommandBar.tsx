@@ -16,14 +16,14 @@ const importTrendRows = [
 const suggestedQuestions = ["进口额度趋势如何？", "哪些品类进口依赖最高？", "这份结论依据是什么？"];
 
 const importTrendOption: EChartsOption = {
-  color: ["#0f766e"],
+  color: ["#044470"],
   grid: { bottom: 34, left: 44, right: 18, top: 28 },
   tooltip: {
     trigger: "axis",
     valueFormatter: (value) => `${value} 亿元`
   },
   xAxis: {
-    axisLine: { lineStyle: { color: "#d0d5dd" } },
+    axisLine: { lineStyle: { color: "#d5dde5" } },
     axisTick: { show: false },
     data: importTrendRows.map((row) => row[0]),
     type: "category"
@@ -31,7 +31,7 @@ const importTrendOption: EChartsOption = {
   yAxis: {
     axisLabel: { formatter: "{value}" },
     name: "亿元",
-    splitLine: { lineStyle: { color: "#eef2f6" } },
+    splitLine: { lineStyle: { color: "#d5dde5" } },
     type: "value"
   },
   series: [
