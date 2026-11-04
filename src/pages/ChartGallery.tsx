@@ -92,13 +92,13 @@ const chartMatrixCards = [
 ];
 
 const palette = {
-  teal: "#0f766e",
-  tealLight: "#b6dfd8",
-  blue: "#2563eb",
-  amber: "#b7791f",
-  ink: "#182230",
-  muted: "#667085",
-  line: "#dfe5ed"
+  teal: "#044470",
+  tealLight: "#0080cc",
+  blue: "#0080cc",
+  amber: "#8f5400",
+  ink: "#1a1a1a",
+  muted: "#5b6b7a",
+  line: "#d5dde5"
 };
 
 function baseGrid(left = 42) {
@@ -126,7 +126,7 @@ function importTrendOption(): EChartsOption {
       type: "value",
       name: "亿元",
       axisLabel: { color: palette.muted },
-      splitLine: { lineStyle: { color: "#eef2f6" } }
+      splitLine: { lineStyle: { color: "#d5dde5" } }
     },
     series: [
       {
@@ -148,7 +148,7 @@ function importTrendOption(): EChartsOption {
 
 function importStructureOption(): EChartsOption {
   return {
-    color: [palette.teal, palette.blue, palette.amber, palette.tealLight, "#94a3b8"],
+    color: [palette.teal, palette.blue, palette.amber, palette.tealLight, "#8fa1b3"],
     tooltip: { trigger: "item", formatter: "{b}: {c}%" },
     series: [
       {
@@ -172,7 +172,7 @@ function importRiskOption(): EChartsOption {
       type: "value",
       max: 80,
       axisLabel: { color: palette.muted },
-      splitLine: { lineStyle: { color: "#eef2f6" } }
+      splitLine: { lineStyle: { color: "#d5dde5" } }
     },
     yAxis: {
       type: "category",
@@ -207,7 +207,7 @@ function registrationTrendOption(): EChartsOption {
       type: "value",
       name: "件",
       axisLabel: { color: palette.muted },
-      splitLine: { lineStyle: { color: "#eef2f6" } }
+      splitLine: { lineStyle: { color: "#d5dde5" } }
     },
     series: [
       {
@@ -252,7 +252,7 @@ function registrationRankOption(): EChartsOption {
       type: "value",
       max: 48,
       axisLabel: { color: palette.muted },
-      splitLine: { lineStyle: { color: "#eef2f6" } }
+      splitLine: { lineStyle: { color: "#d5dde5" } }
     },
     yAxis: {
       type: "category",
